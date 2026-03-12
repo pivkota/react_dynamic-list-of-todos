@@ -3,7 +3,7 @@ import { Loader } from '../Loader';
 import { getUser } from '../../api';
 import { Todo } from '../../types/Todo';
 import { User } from '../../types/User';
-import clsx from 'clsx';
+import classNames from 'classnames';
 
 export interface TodoModalProps {
   selectedTodo: Todo;
@@ -26,7 +26,7 @@ export const TodoModal: React.FC<TodoModalProps> = ({
 
   return (
     <div
-      className={clsx('modal', { 'is-active': !!selectedTodo })}
+      className={classNames('modal', { 'is-active': !!selectedTodo })}
       data-cy="modal"
     >
       <div className="modal-background" onClick={() => setSelectTodo(null)} />
